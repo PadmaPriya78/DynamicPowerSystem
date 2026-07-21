@@ -1,0 +1,109 @@
+/* ── Clients Section ── */
+.clients-section {
+    background: transparent;
+    padding: 80px 0;
+    overflow: hidden;
+}
+
+/* ── Static Grid Layout ── */
+.clients-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 16px;
+    margin-top: 48px;
+    overflow-x: auto;
+    padding-bottom: 12px; /* For scrollbar */
+    scrollbar-width: none; /* Hide scrollbar Firefox */
+}
+
+.clients-grid::-webkit-scrollbar {
+    display: none; /* Hide scrollbar Chrome/Safari */
+}
+
+.client-logo-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--white);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 15px 10px;
+    flex: 1 1 0;
+    min-width: 160px;
+    max-width: 220px;
+    height: 100px;
+    cursor: default;
+    transition: var(--transition);
+    box-shadow: var(--shadow-sm);
+}
+
+.client-logo-card:hover {
+    border-color: var(--primary-orange);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-4px);
+}
+
+.client-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-family: var(--font-heading, 'Inter', sans-serif);
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    padding: 12px 16px;
+    white-space: nowrap;
+}
+
+/* Different logo shapes based on brand */
+.client-brand--box {
+    border-radius: 8px;
+    min-width: 130px;
+}
+
+.client-brand--pill {
+    border-radius: 50px;
+    border: 2px solid transparent;
+}
+
+.client-brand--icon {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    font-weight: 900;
+    font-style: italic;
+    padding: 0;
+}
+
+.client-brand--icon span {
+    transform: skewX(-5deg);
+    padding-right: 6px; /* give the skewed right side some breathing room */
+}
+
+.client-icon {
+    width: 32px;
+    height: 32px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 720px) {
+    .client-logo-card {
+        min-width: 140px;
+        padding: 12px 10px;
+    }
+    .client-brand {
+        font-size: 1.1rem;
+        padding: 8px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .client-logo-card {
+        min-width: 130px;
+        height: 80px;
+    }
+    .client-brand {
+        font-size: 1rem;
+        padding: 6px 10px;
+    }
+}
